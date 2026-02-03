@@ -207,8 +207,14 @@ button.reset:hover:not(:has(> *)) {
 
 .header-menu-item {
   cursor: pointer;
+  color: rgb(54, 69, 79);
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
 }
-
+.at-user-expand:before {
+    content: "\e977";
+}
 .header-ctas {
   align-items: center;
   display: flex;
@@ -682,13 +688,13 @@ a:hover{
                   transform: scale(1.03);
 }
 .featured-collection h2{
-  position: absolute;
+     position: absolute;
     top: auto;
     bottom: 30px;
-    left: 19%;
-    transform: translate(0px, 10px);
+    left: 33%;
+    transform: translate(-19%, 10px);
     background: white;
-    padding: 15px 69px;
+    padding: 15px 18px;
 }
 .featured-collection h2:hover{
       border: 1px solid white;
@@ -865,7 +871,7 @@ a:hover{
 /* Logo List Section CSS */
 .icon-list {
   padding: 25px 0;
-  background: #fff;
+  background: #f3f3f3;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
@@ -923,4 +929,100 @@ a:hover{
           font-size: 18px;
     margin-bottom: 12px;
     font-weight: 600;
+}
+.home-collection h2{
+      color: #5ac4be;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 23px;
+justify-content: center;
+}
+.motif_leave{
+  display: inline-flex;
+}
+.announcement-bar-wrapper {
+  overflow: hidden;
+  background-color: #5ac4be;
+  color: #fff;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.announcement-bar {
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.home-grid-banner{
+  display: flex;
+}
+.home-grid-banner img{
+  width: 100%;
+}
+.home-grid-banner__col--left{
+  width: 25%;
+}
+.home-grid-banner__col--middle{
+   width: 25%;
+}
+
+.home-grid-banner__slider {
+  width: 100%;
+}
+
+.home-grid-banner__slider .home-grid-banner__item {
+  width: 100%;
+}
+
+.home-grid-banner__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.custom-home-banner {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.custom-home-banner__slide {
+  position: relative;
+}
+
+.custom-home-banner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-home-banner__content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.custom-home-banner__heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.custom-home-banner__subheading {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.custom-home-banner__btn-link {
+  background: #000;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
 }

@@ -1,19 +1,19 @@
 export function IconList() {
   const items = [
     {
-      icon: '/icons/free-shipping.svg',
+      icon: '/logo1.webp',
       text: 'Free Shipping Nationwide',
     },
     {
-      icon: '/icons/customer-service.svg',
+      icon: '/logo2.png',
       text: 'Customer service',
     },
     {
-      icon: '/icons/support.svg',
+      icon: '/logo3.png',
       text: '24/7 Support',
     },
     {
-      icon: '/icons/return.svg',
+      icon: '/logo4.png',
       text: 'Return/Exchange Policy',
     },
   ];

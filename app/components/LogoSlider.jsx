@@ -10,7 +10,7 @@ export function LogoSlider() {
   ];
 
   return (
-    <section className="logo-section logo-secrtion">
+    <section className="logo-section">
       <div className="logo-track">
         hy
         {[...logos, ...logos].map((src, index) => (

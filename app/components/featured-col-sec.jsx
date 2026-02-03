@@ -15,7 +15,7 @@ export function CollectionProducts({ collection, title }) {
 
   return (
     <section className="home-collection container">
-      <h2>{title || collection.title}</h2>
+      <h2><span class="motif_leave motif_leave11"><img class="heding-art-design" src="https://cdn.shopify.com/s/files/1/0249/5099/7070/files/left_Image.webp?v=1703763153" alt="heading-art"/></span>{title || collection.title}<span class="motif_leave transform-y-180 motif_leave22"><img class="heding-art-design" src="https://cdn.shopify.com/s/files/1/0249/5099/7070/files/Right_Image.webp?v=1703763152" alt="heading-art"/></span></h2>
 
       <div className="product-grid">
         {collection.products.nodes.map((product) => {

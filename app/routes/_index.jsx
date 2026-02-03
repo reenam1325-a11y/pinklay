@@ -1,4 +1,3 @@
-
 import { Await, useLoaderData, Link } from 'react-router';
 import { Suspense } from 'react';
 import { Image } from '@shopify/hydrogen';
@@ -9,36 +8,47 @@ import { LogoSlider } from '~/components/LogoSlider';
 import { ImageTextSection } from '~/components/ImageTextSection';
 import { Testimonials } from '~/components/Testimonials';
 import { IconList } from '~/components/IconList';
-
+import { HomeGridBanner } from '~/components/gridbanner-custom';
+import {  HomeBannerr } from '~/components/slideshow';
 /**
  * @type {Route.MetaFunction}
  */
 export const meta = () => [{ title: 'Hydrogen | Home' }];
 
-/**
- * Single loader fetching all necessary data
- */
 export async function loader({ context }) {
-  // Featured Collections
-  const { collections } = await context.storefront.query(FEATURED_COLLECTION_QUERY);
+  const { collections } = await context.storefront.query(
+    FEATURED_COLLECTION_QUERY
+  );
 
-  // Homepage Collection (for CollectionProducts component)
-  const unisexCollection = await loadCollection(context, 'unisex');
-  const menCollection = await loadCollection(context, 'men'); 
-
-  // Recommended Products
-  const recommendedProducts = context.storefront
-    .query(RECOMMENDED_PRODUCTS_QUERY)
-    .then((res) => res.products)
-    .catch(() => null);
-
+  console.log('Collections from Shopify:', collections.nodes);
+  const BestSellerCollection = await loadCollection(context, 'best-sellers');
   return {
     featuredCollections: collections.nodes,
-    unisexCollection,
-    menCollection,
-    recommendedProducts,
+    BestSellerCollection
   };
 }
+
+// export async function loader({ context }) {
+//   // Featured Collections
+//   const { collections } = await context.storefront.query(FEATURED_COLLECTION_QUERY);
+
+//   // Homepage Collection (for CollectionProducts component)
+//   const unisexCollection = await loadCollection(context, 'unisex');
+//   const menCollection = await loadCollection(context, 'men'); 
+
+//   // Recommended Products
+//   const recommendedProducts = context.storefront
+//     .query(RECOMMENDED_PRODUCTS_QUERY)
+//     .then((res) => res.products)
+//     .catch(() => null);
+
+//   return {
+//     featuredCollections: collections.nodes,
+//     unisexCollection,
+//     menCollection,
+//     recommendedProducts,
+//   };
+// }
 
 export default function Homepage() {
   const data = useLoaderData();
@@ -46,18 +56,27 @@ export default function Homepage() {
   return (
     <div className="home">
       <HomeBanner
-        image="/PHONE_STUFF03 (1).webp"
-        heading="New Collection"
-        subheading="Latest arrivals just for you"
-        buttonText="Shop Now"
+        image="Website_footer.webp"
+        heading=""
+        subheading=""
+        buttonText=""
         buttonLink={`/collections/${data.featuredCollections?.[0]?.handle}`}
       />
+ <HomeGridBanner
+  leftTop="women.webp"
+  leftBottom="gifts.webp"
+  middleTop="home.webp"
+  middleBottom="kids.webp"
+  rightImage="Kids_Bedding_banner.webp"
+  rightImage1="slide111.webp"
+  rightImage2="slide222.jpg"
+/>
 
-      <FeaturedCollections collections={data.featuredCollections} />
+      {/* <FeaturedCollections collections={data.featuredCollections} /> */}
 
  <CollectionProducts
-        collection={data.unisexCollection}
-        title="Best Seller"
+        collection={data.BestSellerCollection}
+        title="BEST SELLERS"
       />
   <LogoSlider />
  <ImageTextSection
@@ -73,7 +92,32 @@ export default function Homepage() {
         collection={data.menCollection}
         title="New Arrivals"
       />    
-     
+     <HomeBannerr
+  slides={[
+    {
+      image: 'slide111.webp',
+      heading: 'Welcome to Our Store',
+      subheading: 'Best products just for you',
+      buttonText: 'Shop Now',
+      buttonLink: '/shop',
+    },
+    {
+      image: 'slide111.webp',
+      heading: 'New Arrivals',
+      subheading: 'Check out the latest collection',
+      buttonText: 'Explore',
+      buttonLink: '/new-arrivals',
+    },
+    {
+      image: 'slide111.webp',
+      heading: 'Limited Offer',
+      subheading: 'Grab your deal today',
+      buttonText: 'Buy Now',
+      buttonLink: '/offers',
+    },
+  ]}
+/>
+
       <ImageTextSection
         image="/about.webp"
         title="Phone Stuff"
