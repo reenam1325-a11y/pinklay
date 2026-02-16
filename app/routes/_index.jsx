@@ -9,7 +9,8 @@ import { ImageTextSection } from '~/components/ImageTextSection';
 import { Testimonials } from '~/components/Testimonials';
 import { IconList } from '~/components/IconList';
 import { HomeGridBanner } from '~/components/gridbanner-custom';
-import {  HomeBannerr } from '~/components/slideshow';
+
+
 /**
  * @type {Route.MetaFunction}
  */
@@ -28,40 +29,12 @@ export async function loader({ context }) {
   };
 }
 
-// export async function loader({ context }) {
-//   // Featured Collections
-//   const { collections } = await context.storefront.query(FEATURED_COLLECTION_QUERY);
-
-//   // Homepage Collection (for CollectionProducts component)
-//   const unisexCollection = await loadCollection(context, 'unisex');
-//   const menCollection = await loadCollection(context, 'men'); 
-
-//   // Recommended Products
-//   const recommendedProducts = context.storefront
-//     .query(RECOMMENDED_PRODUCTS_QUERY)
-//     .then((res) => res.products)
-//     .catch(() => null);
-
-//   return {
-//     featuredCollections: collections.nodes,
-//     unisexCollection,
-//     menCollection,
-//     recommendedProducts,
-//   };
-// }
-
 export default function Homepage() {
   const data = useLoaderData();
 
   return (
     <div className="home">
-      <HomeBanner
-        image="Website_footer.webp"
-        heading=""
-        subheading=""
-        buttonText=""
-        buttonLink={`/collections/${data.featuredCollections?.[0]?.handle}`}
-      />
+     
  <HomeGridBanner
   leftTop="women.webp"
   leftBottom="gifts.webp"
@@ -78,7 +51,7 @@ export default function Homepage() {
         collection={data.BestSellerCollection}
         title="BEST SELLERS"
       />
-  <LogoSlider />
+  {/* <LogoSlider />
  <ImageTextSection
         image="/collection.webp"
         title="Slide Camera Cover Protection"
@@ -86,14 +59,39 @@ export default function Homepage() {
         buttonText="Shop Now"
         buttonLink="/collections/premium"
         reverse={true} 
-      />
+      /> */}
 
       <CollectionProducts
         collection={data.menCollection}
         title="New Arrivals"
       />    
-     <HomeBannerr
+     {/* <HomeBannerr
   slides={[
+    {
+      image: 'slide111.webp',
+      heading: 'Welcome to Our Store',
+      subheading: 'Best products just for you',
+      buttonText: 'Shop Now',
+      buttonLink: '/shop',
+    },
+    {
+      image: 'slide111.webp',
+      heading: 'New Arrivals',
+      subheading: 'Check out the latest collection',
+      buttonText: 'Explore',
+      buttonLink: '/new-arrivals',
+    },
+    {
+      image: 'slide111.webp',
+      heading: 'Limited Offer',
+      subheading: 'Grab your deal today',
+      buttonText: 'Buy Now',
+      buttonLink: '/offers',
+    },
+  ]}
+/> */}
+<HomeBanner
+   slides={[
     {
       image: 'slide111.webp',
       heading: 'Welcome to Our Store',
@@ -118,18 +116,24 @@ export default function Homepage() {
   ]}
 />
 
-      <ImageTextSection
+      {/* <ImageTextSection
         image="/about.webp"
         title="Phone Stuff"
         text="PHONE STUFF is your one-stop shop for high-quality mobile accessories. We offer a wide range of products including phone cases, screen protectors, chargers, power banks, earphones, holders, and more—compatible with all major smartphone brands. Whether you're looking for stylish protection, fast charging, or must-have gadgets, PHONE STUFF has you covered. Shop online and enjoy affordable prices, secure checkout, and fast delivery."
         buttonText="View More"
         buttonLink="/collections/limited"
         reverse={false} 
-      />
-      <RecommendedProducts products={data.recommendedProducts} />
+      /> */}
+      {/* <RecommendedProducts products={data.recommendedProducts} /> */}
             <Testimonials />
-      <IconList />
-
+      {/* <IconList /> */}
+ <HomeBanner
+        image="Website_footer.webp"
+        heading=""
+        subheading=""
+        buttonText=""
+        buttonLink={`/collections/${data.featuredCollections?.[0]?.handle}`}
+      />
     </div>
   );
 }
