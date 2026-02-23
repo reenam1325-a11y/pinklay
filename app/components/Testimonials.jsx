@@ -3,28 +3,29 @@ import { Image } from '@shopify/hydrogen';
 export function Testimonials() {
   const testimonials = [
     {
-      name: 'Sachin Sharma',
-      image: '/review11.avif',
-      text:
-        'Absolutely love this case! The fit is perfect for my iPhone 16, feels premium in hand, and gives great protection. Highly recommend!',
+      name: 'Dipti M.',
+      image: '/1review.jpg',
+    
     },
     {
-      name: 'Tasneem',
-      image: '/review2.jpg',
-      text:
-        'The grip is amazing and the finish feels premium. Fits my Galaxy S24 Ultra perfectly without making it bulky.',
+      name: 'Sukhneer K.',
+      image: '2review.jpg',
+     
     },
     {
-      name: 'Arjun',
-      image: '/review3.jpg',
-      text:
-        'Excellent protection and feels solid. It’s a little heavier than I expected, but worth it for the safety.',
+      name: 'Ameeta K.',
+      image: '/3review.jpg',
+      
     },
     {
-      name: 'Balvant Singh',
-      image: '/review5.jpg',
-      text:
-        'The Nillkin CamShield is amazing! The sliding camera cover gives me extra peace of mind and the grip feels solid without being bulky.',
+      name: 'Rachna W.',
+      image: '/4review.jpg',
+     
+    },
+     {
+      name: 'Laya B.',
+      image: '/5review.jpg',
+     
     },
   ];
 
@@ -41,14 +42,18 @@ export function Testimonials() {
               <div className="testimonial-image">
                 <img src={item.image} alt={item.name} />
               </div>
+ <div className="testimonial-information">
+           
 
-              <div className="testimonial-stars">
+              <h3 className="testimonial-name">{item.name}<svg viewBox="0 0 24 24" width="16" height="16">
+    <circle cx="12" cy="12" r="12" fill="#fff"></circle>
+    <path d="M7 12l3 3 7-7" stroke="#000" stroke-width="2" fill="none"></path>
+  </svg></h3>
+   <div className="testimonial-stars">
                 ★★★★★
               </div>
-
-              <h3 className="testimonial-name">{item.name}</h3>
-
-              <p className="testimonial-text">“{item.text}”</p>
+              <p className="testimonial-text">{item.text}</p>
+            </div>
             </div>
           ))}
         </div>

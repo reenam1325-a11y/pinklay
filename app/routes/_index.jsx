@@ -9,8 +9,7 @@ import { ImageTextSection } from '~/components/ImageTextSection';
 import { Testimonials } from '~/components/Testimonials';
 import { IconList } from '~/components/IconList';
 import { HomeGridBanner } from '~/components/gridbanner-custom';
-
-
+import CategoryGrid from '~/components/CategoryGrid';
 /**
  * @type {Route.MetaFunction}
  */
@@ -44,6 +43,10 @@ export default function Homepage() {
   rightImage1="slide111.webp"
   rightImage2="slide222.jpg"
 />
+<CategoryGrid   
+  rightImage1="Hyd_Desktop.webp"
+  rightImage2="Bengaluru_Desktop.webp" />
+
 
       {/* <FeaturedCollections collections={data.featuredCollections} /> */}
 

@@ -121,12 +121,15 @@ function loadDeferredData({context}) {
 
   // defer the footer query (below the fold)
   const footer = storefront
+  
     .query(FOOTER_QUERY, {
-      cache: storefront.CacheLong(),
-      variables: {
-        footerMenuHandle: 'footer', // Adjust to your footer menu handle
-      },
-    })
+      cache: storefront.CacheLong(),
+      variables: {
+        helpHandle: 'need-help',
+        companyHandle: 'the-company',
+      },
+
+    })
     .catch((error) => {
       // Log query errors, but don't throw them so the page can still render
       console.error(error);
