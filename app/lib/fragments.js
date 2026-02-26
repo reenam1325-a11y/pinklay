@@ -221,6 +221,26 @@ export const HEADER_QUERY = `#graphql
 `;
 
 
+// export const FOOTER_QUERY = `#graphql
+//   query Footer(
+//     $country: CountryCode
+//     $helpHandle: String!
+//     $companyHandle: String!
+//     $language: LanguageCode
+//   ) @inContext(language: $language, country: $country) {
+
+//     help: menu(handle: $helpHandle) {
+//       ...Menu
+//     }
+
+//     company: menu(handle: $companyHandle) {
+//       ...Menu
+//     }
+
+//   }
+//   ${MENU_FRAGMENT}
+// `;
+
 export const FOOTER_QUERY = `#graphql
   query Footer(
     $country: CountryCode

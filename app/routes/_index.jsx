@@ -65,7 +65,7 @@ export default function Homepage() {
       /> */}
 
       <CollectionProducts
-        collection={data.menCollection}
+        collection={data.menCollection} 
         title="New Arrivals"
       />    
      {/* <HomeBannerr
@@ -130,13 +130,13 @@ export default function Homepage() {
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
             <Testimonials />
       {/* <IconList /> */}
- <HomeBanner
+ {/* <HomeBanner
         image="Website_footer.webp"
         heading=""
         subheading=""
         buttonText=""
         buttonLink={`/collections/${data.featuredCollections?.[0]?.handle}`}
-      />
+      /> */}
     </div>
   );
 }
