@@ -64,10 +64,10 @@ export default function Homepage() {
         reverse={true} 
       /> */}
 
-      <CollectionProducts
+      {/* <CollectionProducts
         collection={data.menCollection} 
         title="New Arrivals"
-      />    
+      />     */}
      {/* <HomeBannerr
   slides={[
     {
@@ -222,3 +222,5 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     }
   }
 `;
+
+

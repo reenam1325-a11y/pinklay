@@ -209,5 +209,6 @@ export function Footer({footer}) {
         }}
       </Await>
     </Suspense>
+
   );
 }
